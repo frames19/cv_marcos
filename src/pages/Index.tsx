@@ -1,19 +1,48 @@
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Calendar, User } from "lucide-react";
+import { Mail, Phone, MapPin, Calendar, User, Code2, Database, Wrench, Terminal as TerminalIcon } from "lucide-react";
+import { Terminal } from "@/components/Terminal";
+import { SkillCard } from "@/components/SkillCard";
+import { ProjectCard } from "@/components/ProjectCard";
 
 const Index = () => {
+  const terminalLines = [
+    "$ whoami",
+    "> Marcos Timana Ramos",
+    "$ cat profile.txt",
+    "> Full Stack Developer | Software Engineer",
+    "> Passionate about creating quality solutions",
+    "> Always going the extra mile",
+    "$ skills --list",
+    "> Loading expertise..."
+  ];
+
   const skills = {
-    languages: ["HTML", "PHP", "CSS", "JavaScript", "Python", "Visual Basic"],
-    frameworks: ["Laravel", "React", "NodeJS", "Firebase", "Android Studio"],
-    databases: ["MySQL", "SQL Developer", "PHPMyAdmin"],
-    tools: ["Visual Studio Code", "Apache NetBeans", "Word", "PowerPoint", "Excel", "Photoshop", "CorelDraw", "Filmora"]
+    languages: {
+      title: "Lenguajes",
+      items: ["HTML", "PHP", "CSS", "JavaScript", "Python", "Visual Basic"],
+      icon: Code2
+    },
+    frameworks: {
+      title: "Frameworks",
+      items: ["Laravel", "React", "NodeJS", "Firebase", "Android Studio"],
+      icon: Database
+    },
+    databases: {
+      title: "Bases de Datos",
+      items: ["MySQL", "SQL Developer", "PHPMyAdmin"],
+      icon: Database
+    },
+    tools: {
+      title: "Herramientas",
+      items: ["VS Code", "NetBeans", "Photoshop", "CorelDraw", "Filmora"],
+      icon: Wrench
+    }
   };
 
   const education = [
     {
       period: "2023 - 2026",
-      title: "Ingeniería de Software con Inteligencia Artificial",
+      title: "Ingeniería de Software con IA",
       institution: "SENATI",
       type: "ESTUDIOS SUPERIORES"
     },
@@ -47,173 +76,165 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <Card className="mb-8 overflow-hidden shadow-elegant">
-          <div className="gradient-tech p-8 text-white">
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="w-32 h-32 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-6xl font-bold">
-                MT
-              </div>
-              <div className="flex-1 text-center md:text-left">
-                <h1 className="text-4xl md:text-5xl font-bold mb-2">Marcos Timana Ramos</h1>
-                <p className="text-xl text-white/90 mb-4">Software Engineer | Full Stack Developer</p>
-                <div className="flex flex-wrap gap-4 justify-center md:justify-start text-sm">
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-4 h-4" />
-                    <span>+51 900836581</span>
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto space-y-8">
+        {/* Hero Header */}
+        <div className="relative">
+          <Card className="overflow-hidden shadow-neon border-neon-glow glass-effect animate-fade-in">
+            <div className="gradient-neon p-1">
+              <div className="bg-card p-8">
+                <div className="flex flex-col lg:flex-row gap-8 items-center">
+                  {/* Avatar */}
+                  <div className="relative group">
+                    <div className="absolute inset-0 gradient-neon rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity animate-pulse-glow" />
+                    <div className="relative w-40 h-40 rounded-full gradient-neon p-1 animate-float">
+                      <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
+                        <span className="text-6xl font-bold text-neon code-font">MT</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-4 h-4" />
-                    <span>marcostimanaramos@gmail.com</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4" />
-                    <span>Piura, Perú</span>
+
+                  {/* Info */}
+                  <div className="flex-1 text-center lg:text-left space-y-4">
+                    <div>
+                      <h1 className="text-4xl lg:text-6xl font-bold mb-2 text-neon code-font">
+                        Marcos Timana Ramos
+                      </h1>
+                      <p className="text-xl lg:text-2xl text-primary">
+                        {'<'} Full Stack Developer | Software Engineer {' />'}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-4 justify-center lg:justify-start text-sm">
+                      <div className="flex items-center gap-2 px-4 py-2 rounded-lg glass-effect border-neon">
+                        <Phone className="w-4 h-4 text-primary" />
+                        <span>+51 900836581</span>
+                      </div>
+                      <div className="flex items-center gap-2 px-4 py-2 rounded-lg glass-effect border-neon">
+                        <Mail className="w-4 h-4 text-primary" />
+                        <span>marcostimanaramos@gmail.com</span>
+                      </div>
+                      <div className="flex items-center gap-2 px-4 py-2 rounded-lg glass-effect border-neon">
+                        <MapPin className="w-4 h-4 text-primary" />
+                        <span>Piura, Perú</span>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                      <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10">
+                        <User className="w-4 h-4 text-primary" />
+                        <span className="text-sm">DNI: 62327196</span>
+                      </div>
+                      <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10">
+                        <Calendar className="w-4 h-4 text-primary" />
+                        <span className="text-sm">23 años</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <div className="p-6 bg-card grid grid-cols-1 md:grid-cols-3 gap-4 border-t">
-            <div className="text-center">
-              <User className="w-5 h-5 mx-auto mb-1 text-primary" />
-              <p className="text-sm text-muted-foreground">DNI</p>
-              <p className="font-semibold">62327196</p>
-            </div>
-            <div className="text-center">
-              <Calendar className="w-5 h-5 mx-auto mb-1 text-primary" />
-              <p className="text-sm text-muted-foreground">Edad</p>
-              <p className="font-semibold">23 años</p>
-            </div>
-            <div className="text-center">
-              <MapPin className="w-5 h-5 mx-auto mb-1 text-primary" />
-              <p className="text-sm text-muted-foreground">Nacionalidad</p>
-              <p className="font-semibold">Peruano</p>
-            </div>
-          </div>
-        </Card>
+          </Card>
+        </div>
 
-        {/* About Me */}
-        <Card className="mb-8 p-8 shadow-elegant shadow-hover">
-          <h2 className="text-2xl font-bold mb-4 text-primary">Sobre Mí</h2>
-          <div className="space-y-3 text-foreground/90">
-            <p>
-              Como profesional, he demostrado un fuerte compromiso, responsabilidad y resiliencia en los diversos proyectos en los que he trabajado.
+        {/* Terminal About */}
+        <Card className="p-8 glass-effect border-neon shadow-neon-hover animate-fade-in">
+          <div className="flex items-center gap-3 mb-6">
+            <TerminalIcon className="w-6 h-6 text-primary" />
+            <h2 className="text-2xl font-bold text-primary code-font">$ cat about.me</h2>
+          </div>
+          <Card className="bg-background/50 p-6 border-neon">
+            <Terminal lines={terminalLines} />
+          </Card>
+          <div className="mt-6 space-y-3 text-foreground/90">
+            <p className="flex items-start gap-2">
+              <span className="text-primary code-font">{'>'}</span>
+              <span>Como profesional, he demostrado un fuerte compromiso, responsabilidad y resiliencia en los diversos proyectos en los que he trabajado.</span>
             </p>
-            <p>
-              Me caracterizo por ir siempre un paso más lejos y aportar soluciones de calidad que simplemente funcionen.
+            <p className="flex items-start gap-2">
+              <span className="text-primary code-font">{'>'}</span>
+              <span>Me caracterizo por ir siempre un paso más lejos y aportar soluciones de calidad que simplemente funcionen.</span>
             </p>
-            <p>
-              Me encanta poder ayudar y compartir mis conocimientos con el resto de compañeros.
+            <p className="flex items-start gap-2">
+              <span className="text-primary code-font">{'>'}</span>
+              <span>Me encanta poder ayudar y compartir mis conocimientos con el resto de compañeros.</span>
             </p>
           </div>
         </Card>
 
-        {/* Education */}
-        <Card className="mb-8 p-8 shadow-elegant shadow-hover">
-          <h2 className="text-2xl font-bold mb-6 text-primary">Educación</h2>
+        {/* Education Timeline */}
+        <Card className="p-8 glass-effect border-neon shadow-neon-hover animate-fade-in">
+          <h2 className="text-3xl font-bold mb-8 text-primary code-font">
+            {'<'} Educación {' />'}
+          </h2>
           <div className="space-y-6">
             {education.map((edu, index) => (
-              <div key={index} className="flex gap-4 group">
+              <div key={index} className="flex gap-6 group">
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold group-hover:bg-primary group-hover:text-white transition-colors">
-                    {edu.period.split(' - ')[0]}
+                  <div className="w-16 h-16 rounded-lg bg-gradient-neon flex items-center justify-center text-background font-bold code-font shadow-neon group-hover:scale-110 transition-transform">
+                    {edu.period.split(' - ')[0].slice(2)}
                   </div>
                   {index < education.length - 1 && (
-                    <div className="w-0.5 h-full bg-border mt-2" />
+                    <div className="w-0.5 h-full bg-primary/30 mt-2" />
                   )}
                 </div>
-                <div className="flex-1 pb-6">
-                  <p className="text-xs text-accent font-semibold mb-1">{edu.type}</p>
-                  <h3 className="text-lg font-semibold text-foreground mb-1">{edu.title}</h3>
+                <Card className="flex-1 p-4 glass-effect border-neon shadow-neon-hover">
+                  <p className="text-xs text-primary font-semibold mb-1 code-font">{edu.type}</p>
+                  <h3 className="text-lg font-bold text-foreground mb-1">{edu.title}</h3>
                   <p className="text-muted-foreground">{edu.institution}</p>
-                  <p className="text-sm text-muted-foreground mt-1">{edu.period}</p>
-                </div>
+                  <p className="text-sm text-primary mt-2 code-font">{edu.period}</p>
+                </Card>
               </div>
             ))}
           </div>
         </Card>
 
-        {/* Skills */}
-        <Card className="mb-8 p-8 shadow-elegant shadow-hover">
-          <h2 className="text-2xl font-bold mb-6 text-primary">Habilidades Técnicas</h2>
-          
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold mb-3 text-foreground">Lenguajes</h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.languages.map((skill, index) => (
-                  <Badge key={index} variant="secondary" className="px-4 py-2 text-sm">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-3 text-foreground">Frameworks & Plataformas</h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.frameworks.map((skill, index) => (
-                  <Badge key={index} variant="secondary" className="px-4 py-2 text-sm">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-3 text-foreground">Bases de Datos</h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.databases.map((skill, index) => (
-                  <Badge key={index} variant="secondary" className="px-4 py-2 text-sm">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-3 text-foreground">Herramientas & Software</h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.tools.map((skill, index) => (
-                  <Badge key={index} variant="secondary" className="px-4 py-2 text-sm">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
+        {/* Skills Grid */}
+        <div>
+          <h2 className="text-3xl font-bold mb-6 text-primary code-font text-center">
+            {'<'} Stack Tecnológico {' />'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {Object.entries(skills).map(([key, skill], index) => (
+              <SkillCard
+                key={key}
+                title={skill.title}
+                skills={skill.items}
+                icon={skill.icon}
+                delay={index * 100}
+              />
+            ))}
           </div>
-        </Card>
+        </div>
 
         {/* Projects */}
-        <Card className="mb-8 p-8 shadow-elegant shadow-hover">
-          <h2 className="text-2xl font-bold mb-6 text-primary">Proyectos Realizados</h2>
-          <p className="text-sm text-accent font-semibold mb-6">EN EL ÁREA DE INGENIERÍA DE SOFTWARE</p>
-          
-          <div className="grid gap-6">
+        <div>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-primary code-font mb-2">
+              {'<'} Proyectos {' />'}
+            </h2>
+            <p className="text-sm text-muted-foreground code-font">
+              // EN EL ÁREA DE INGENIERÍA DE SOFTWARE
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {projects.map((project, index) => (
-              <Card key={index} className="p-6 border-l-4 border-l-accent bg-muted/30 hover:bg-muted/50 transition-colors">
-                <h3 className="text-xl font-bold text-foreground mb-2">{project.name}</h3>
-                <div className="space-y-1 text-sm">
-                  <p className="text-muted-foreground">
-                    <span className="font-semibold text-foreground">Empresa:</span> {project.company}
-                  </p>
-                  <p className="text-muted-foreground">
-                    <span className="font-semibold text-foreground">Duración:</span> {project.duration}
-                  </p>
-                  <Badge variant="outline" className="mt-2">{project.year}</Badge>
-                </div>
-              </Card>
+              <ProjectCard
+                key={index}
+                {...project}
+                delay={index * 100}
+              />
             ))}
           </div>
-        </Card>
+        </div>
 
         {/* Footer */}
-        <div className="text-center text-sm text-muted-foreground mt-12">
-          <p>© 2025 Marcos Timana Ramos - Todos los derechos reservados</p>
+        <div className="text-center py-8">
+          <Card className="inline-block px-8 py-4 glass-effect border-neon">
+            <p className="text-sm text-muted-foreground code-font">
+              © 2025 Marcos Timana Ramos <span className="text-primary">|</span> Software Engineer
+            </p>
+          </Card>
         </div>
       </div>
     </div>
