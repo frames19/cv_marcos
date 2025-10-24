@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code - CV Marcos Timana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .qr-code {
+            margin: 30px 0;
+        }
+        .info {
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 CV Digital</h1>
+        <h2>Marcos Timana Ramos</h2>
+        <p>Full Stack Developer Junior</p>
+        
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://frames19.github.io/cv_marcos/" alt="QR Code CV" style="border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+        </div>
+        
+        <div class="info">
+            <p><strong>Escanea este código QR para ver mi CV</strong></p>
+            <p>O visita directamente:</p>
+        </div>
+        
+        <div class="links">
+            <a href="https://frames19.github.io/cv_marcos/" target="_blank">🌐 Ver CV Online</a>
+            <a href="cv_marcos.zip" download>📁 Descargar ZIP</a>
+        </div>
+        
+        <div style="margin-top: 30px; font-size: 0.9em; opacity: 0.8;">
+            <p>📧 marcostimanaramos@gmail.com</p>
+            <p>📱 +51 900836581</p>
+            <p>📍 Piura, Perú</p>
+        </div>
+    </div>
+</body>
+</html>
