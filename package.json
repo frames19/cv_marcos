@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://frames19.github.io/cv_marcos/",
+  "homepage": "https://frames19.github.io/cv_marcos",
   "scripts": {
     "dev": "vite",
     "build": "vite build && echo. > dist/.nojekyll",
