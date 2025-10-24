@@ -51,7 +51,7 @@ const Index = () => {
       institution: "Andrés Avelino Cáceres",
       type: "EDUCACIÓN SECUNDARIA",
       description: "Educación secundaria completa con enfoque en ciencias y matemáticas.",
-      achievements: ["Bachiller en Ciencias", "Participación en actividades extracurriculares"]
+      achievements: ["Participación en actividades extracurriculares"]
     }
   ];
 
