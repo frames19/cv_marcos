@@ -1,16 +1,18 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Building2, Clock } from "lucide-react";
+import { Building2, Clock, Code, FileText } from "lucide-react";
 
 interface ProjectCardProps {
   name: string;
   company: string;
   duration: string;
   year: string;
+  description?: string;
+  technologies?: string[];
   delay?: number;
 }
 
-export const ProjectCard = ({ name, company, duration, year, delay = 0 }: ProjectCardProps) => {
+export const ProjectCard = ({ name, company, duration, year, description, technologies, delay = 0 }: ProjectCardProps) => {
   return (
     <Card 
       className="p-6 glass-effect border-neon shadow-neon-hover group relative overflow-hidden"
@@ -28,7 +30,7 @@ export const ProjectCard = ({ name, company, duration, year, delay = 0 }: Projec
           </Badge>
         </div>
         
-        <div className="space-y-2">
+        <div className="space-y-3">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Building2 className="w-4 h-4 text-primary" />
             <span className="font-semibold text-foreground">{company}</span>
@@ -37,6 +39,29 @@ export const ProjectCard = ({ name, company, duration, year, delay = 0 }: Projec
             <Clock className="w-4 h-4 text-primary" />
             <span>{duration}</span>
           </div>
+          
+          {description && (
+            <div className="flex items-start gap-2 text-sm text-muted-foreground">
+              <FileText className="w-4 h-4 text-primary mt-0.5" />
+              <span className="text-foreground/80">{description}</span>
+            </div>
+          )}
+          
+          {technologies && technologies.length > 0 && (
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm text-primary">
+                <Code className="w-4 h-4" />
+                <span className="font-semibold">Tecnologías:</span>
+              </div>
+              <div className="flex flex-wrap gap-1">
+                {technologies.map((tech, index) => (
+                  <Badge key={index} variant="outline" className="text-xs border-primary/30 text-primary">
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </Card>
