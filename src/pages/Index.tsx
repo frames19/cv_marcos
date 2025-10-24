@@ -142,7 +142,7 @@ const Index = () => {
                     <div className="absolute inset-0 gradient-neon rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity animate-pulse-glow" />
                     <div className="relative w-40 h-40 rounded-full gradient-neon p-1 animate-float">
                       <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-                        <span className="text-6xl font-bold text-neon code-font">MT</span>
+                        <span className="text-6xl font-bold text-neon code-font animate-pulse">MT</span>
                       </div>
                     </div>
                   </div>
